@@ -1,0 +1,88 @@
+{
+  "guid": "",
+  "workflow_guid": "",
+  "node_type": "source",
+  "node_type_id": "LKFLOW_S3_SOURCE",
+  "interval": true,
+  "node_name": "S3 Adapter (Source)",
+  "description": "Polls an S3 prefix on a timer, downloads objects older than a minimum age, pushes each one downstream, and optionally deletes it from the bucket. Uses the aws_s3 library for signing and transport.",
+  "config": [
+    {
+      "label": "Interval",
+      "value": 60000,
+      "field_type": "number",
+      "description": "How often, in milliseconds, the runtime invokes the polling script. 60000 is one minute."
+    },
+    {
+      "label": "Region",
+      "value": "us-east-1",
+      "field_type": "string",
+      "description": "The AWS region the bucket lives in. Must match the bucket, or S3 rejects the signature."
+    },
+    {
+      "label": "Bucket Name",
+      "value": "",
+      "field_type": "string",
+      "description": "The S3 bucket to poll."
+    },
+    {
+      "label": "Access Key",
+      "value": "",
+      "field_type": "password",
+      "description": "AWS access key ID. Stored encrypted and decrypted only when the script reads it."
+    },
+    {
+      "label": "Secret Key",
+      "value": "",
+      "field_type": "password",
+      "description": "AWS secret access key. Stored encrypted and decrypted only when the script reads it."
+    },
+    {
+      "label": "Endpoint Override",
+      "value": "",
+      "field_type": "string",
+      "description": "Leave blank for AWS. Set to a full base URL to point at an S3-compatible service such as MinIO or LocalStack."
+    },
+    {
+      "label": "Prefix",
+      "value": "incoming/",
+      "field_type": "string",
+      "description": "Only keys under this prefix are polled. A trailing slash makes it behave like a folder."
+    },
+    {
+      "label": "Minimum Object Age",
+      "value": 60,
+      "field_type": "number",
+      "description": "The minimum age, in seconds, an object must reach before it is downloaded. Stops the poller picking up an object that another process is still uploading. 60 is one minute."
+    },
+    {
+      "label": "Max Objects Per Poll",
+      "value": 10,
+      "field_type": "number",
+      "description": "Upper bound on how many objects one poll handles, so a large backlog is drained over several intervals rather than in one long run."
+    },
+    {
+      "label": "Delete After Download",
+      "value": true,
+      "field_type": "bool",
+      "description": "Delete each object from S3 after it has been pushed downstream. Turn off for a read-only demo that can be replayed."
+    },
+    {
+      "label": "Live Mode",
+      "value": false,
+      "field_type": "bool",
+      "description": "When off, requests are signed and logged but never sent. Lets you prove configuration and signing are correct before touching a real bucket."
+    },
+    {
+      "label": "Verify TLS",
+      "value": true,
+      "field_type": "bool",
+      "description": "Verify the server certificate. Leave on for AWS; turn off only for a local S3-compatible service with a self-signed certificate."
+    }
+  ],
+  "library_deps": {
+    "aws_s3": "1.0.0"
+  },
+  "config_version": 1,
+  "version": "1.0.0"
+}

@@ -1,0 +1,9 @@
+{
+  "format": "linkiir.catalog",
+  "format_version": 1,
+  "id": "lkflow",
+  "name": "Linkiir Transport Adapters",
+  "publisher": "Linkiir Inc",
+  "description": "Catalog of object storage, file transport and message broker adapters",
+  "min_grid_version": ""
+}

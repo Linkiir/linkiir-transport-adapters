@@ -1,0 +1,65 @@
+{
+  "resourceType": "Patient",
+  "id": "demo-patient-001",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.19.5",
+      "value": "MRN-458219"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "family": "Whitfield",
+      "given": [
+        "Amara",
+        "Joy"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1-416-555-0142",
+      "use": "home"
+    },
+    {
+      "system": "email",
+      "value": "amara.whitfield@example.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1984-03-17",
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "88 Riverbend Crescent"
+      ],
+      "city": "Toronto",
+      "state": "ON",
+      "postalCode": "M5V 2K7",
+      "country": "CA"
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "en-CA",
+            "display": "English (Canada)"
+          }
+        ]
+      },
+      "preferred": true
+    }
+  ]
+}

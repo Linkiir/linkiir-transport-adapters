@@ -1,0 +1,5 @@
+{
+  "name": "aws_s3",
+  "description": "AWS S3 client for the native Linkiir scripting API. Signs requests with AWS Signature V4 using linkiir.sec, talks to S3 over linkiir.link.web, and parses ListObjectsV2 and error responses without an XML module. Exposes put/get/head/delete/list on a client object, each returning result or nil+err, with built-in retry and backoff.",
+  "version": "1.0.0"
+}

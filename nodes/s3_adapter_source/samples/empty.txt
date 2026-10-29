@@ -1,0 +1,3 @@
+A polling source builds its own messages from what it finds in S3, so there is
+no inbound sample to supply here. This file exists so the template ships a
+samples/ folder like every other node template.
